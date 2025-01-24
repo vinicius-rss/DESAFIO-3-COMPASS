@@ -1,4 +1,4 @@
-/* Reset de estilo básico */
+/* RESET DE ESTILO */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +8,23 @@
 html, body {
   height: 100%; /* Garante que o body cubra a altura da tela */
 }
+
+/* ESTILOS GERAIS */
+body {
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  color: white;
+  background: #242424;
+  overflow-x: hidden;
+  background-image: url(/public/login-background.svg);
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-size: cover; /* Faz a imagem cobrir toda a área disponível */
+  background-position: center; /* Centraliza a imagem */
+  display: flex; /* Adiciona flexbox para alinhar o conteúdo */
+  flex-direction: column; /* Mantém o layout vertical */
+  min-height: 100vh; /* Garante que o fundo cubra ao menos toda a tela */
+}
+
+/* HEADER */
 header {
   display: flex;
   flex-direction: column;
@@ -30,30 +47,28 @@ header p {
   font-weight: bold;
 }
 
+/* STATUS BAR */
 .status-bar {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   position: absolute;
   top: 0;
 }
 
-
-body {
-  font-family: 'Dm sans', Arial, Helvetica, sans-serif;
-  color: white;
-  background: #242424;
-  overflow-x: hidden;
-  background-image: url(/public/login-background.svg);
-  background-repeat: no-repeat; /* Evita repetição da imagem */
-  background-size: cover; /* Faz a imagem cobrir toda a área disponível */
-  background-position: center; /* Centraliza a imagem */
-  display: flex; /* Adiciona flexbox para alinhar o conteúdo */
-  flex-direction: column; /* Mantém o layout vertical */
-  min-height: 100vh; /* Garante que o fundo cubra ao menos toda a tela */
+.time {
+  margin-left: 30px;
+  margin-top: 15px;
 }
 
+.icons {
+  margin-top: 15px;
+  margin-right: 10px;
+  display: flex;
+}
+
+/* ÁREA PRINCIPAL */
 main {
   flex: 1; /* Faz o conteúdo principal expandir para preencher o espaço restante */
   padding: 20px;
@@ -62,6 +77,55 @@ main {
   align-items: center; /* Centraliza verticalmente */
 }
 
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.login-button {
+  padding: 20px;
+  background-color: #0ACF83;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #555;
+}
+
+.forgot-password {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.forgot-password:hover {
+ text-decoration: underline;
+}
+
+.google-sign-in {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+
+/* RODAPÉ */
 footer {
   text-align: center;
   padding: 10px;
@@ -69,11 +133,18 @@ footer {
   color: white;
 }
 
-.time {
-  margin-left: 30px;
+footer p {
+  margin: 0;
 }
 
-.icons {
-  margin-right: 10px;
+.signup-link a {
+  color: #0ACF83;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
 }
- 
+
+.signup-link a:hover {
+  color: rgb(0, 104, 2);
+  text-decoration: none;
+}

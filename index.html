@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="src/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
   <title>Login</title>
 </head>
 
@@ -18,13 +20,13 @@
       <span class="time">9:41</span>
       <div class="icons">
         <!-- Substitua por seus próprios SVGs -->
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
           <image href="/public/header-signal.svg">
         </svg>
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
           <image href="/public/header-wifi.svg">
         </svg>
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
           <image href="/public/header-battery.svg">
         </svg>
       </div>
@@ -32,8 +34,8 @@
     <h1>Audio</h1>
     <p>It´s modular and designed to last</p>
   </header>
-  
-  
+
+
   <main>
     <section class="login-container">
       <form class="login-form">
@@ -43,15 +45,19 @@
         <div class="form-group">
           <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
+        <p class="forgot-password">Forgot password</p>
         <button type="submit" class="login-button">Sign in</button>
-        <p class="signup-link">
-          Não tem uma conta? <a href="#">Cadastre-se</a>
-        </p>
+        <p class="google-sign-in"> <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
+          <image href="/public/icon-google.svg">
+          </svg>Sign in with Google</p>
       </form>
     </section>
   </main>
   <footer>
-    <p>Didn´t have any account? Sign up here </p>
+    
+    <p class="signup-link">
+      Didn´t have any account? <a href="#">Sign Up here</a>
+    </p>
   </footer>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
