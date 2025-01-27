@@ -1,0 +1,69 @@
+[
+    {
+      "id": "1",
+      "name": "TMA-HD Wireless",
+      "category": "headsets",
+      "price": 150,
+      "details": "A high-quality wireless headset with noise-canceling technology and ergonomic design for long listening sessions.",
+      "img": "https://empreender.nyc3.cdn.digitaloceanspaces.com/dropi/ef7e65e6c55b14894c569dd2948b130f.jpeg",
+      "reviews": [
+        {
+          "userId": "user101",
+          "userName": "John Brown",
+          "rating": 5,
+          "comment": "Amazing sound quality and super comfortable to wear!",
+          "postedAt": "2025-01-05"
+        },
+        {
+          "userId": "user102",
+          "userName": "Emily Doe",
+          "rating": 4,
+          "comment": "Great features, but the battery life could be longer.",
+          "postedAt": "2025-01-10"
+        },
+        {
+          "userId": "user103",
+          "userName": "Michael Carter",
+          "rating": 4,
+          "comment": "Good noise-canceling and comfort, but a bit bulky for everyday use.",
+          "postedAt": "2025-01-20"
+        }
+      ],
+      "popularity": 85,
+      "createdAt": "2024-12-25"
+    },
+    {
+      "id": "2",
+      "name": "TMA-2 Comfort Wireless",
+      "category": "headphones",
+      "price": 200,
+      "details": "Over-ear headphones designed for ultimate comfort, featuring premium sound and long-lasting battery.",
+      "img": "https://empreender.nyc3.cdn.digitaloceanspaces.com/dropi/ef7e65e6c55b14894c569dd2948b130f.jpeg",
+      "reviews": [
+        {
+          "userId": "user201",
+          "userName": "Alice Adams",
+          "rating": 5,
+          "comment": "Perfect for studio use, with crystal-clear audio.",
+          "postedAt": "2025-01-07"
+        },
+        {
+          "userId": "user202",
+          "userName": "Mark Smith",
+          "rating": 4,
+          "comment": "Good build quality, but a bit heavy for outdoor use.",
+          "postedAt": "2025-01-08"
+        },
+        {
+          "userId": "user203",
+          "userName": "Sophia Miller",
+          "rating": 4,
+          "comment": "Excellent sound quality, but they feel a bit too tight on the head after long sessions.",
+          "postedAt": "2025-01-19"
+        }
+      ],
+      "popularity": 92,
+      "createdAt": "2024-12-28"
+    }
+  ]
+  

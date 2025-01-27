@@ -7,6 +7,7 @@
 
 html, body {
   height: 100%; /* Garante que o body cubra a altura da tela */
+  margin: 0;
 }
 
 /* ESTILOS GERAIS */
@@ -16,12 +17,14 @@ body {
   background: #242424;
   overflow-x: hidden;
   background-image: url(/public/login-background.svg);
-  background-repeat: no-repeat; /* Evita repetição da imagem */
-  background-size: cover; /* Faz a imagem cobrir toda a área disponível */
-  background-position: center; /* Centraliza a imagem */
-  display: flex; /* Adiciona flexbox para alinhar o conteúdo */
-  flex-direction: column; /* Mantém o layout vertical */
-  min-height: 100vh; /* Garante que o fundo cubra ao menos toda a tela */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column; /* Garante que o conteúdo do body seja empilhado verticalmente */
+  min-height: 100vh; /* Garante que o body cubra ao menos toda a altura da tela */
+  justify-content: flex-start; /* Alinha os itens no topo inicialmente */
+  align-items: center;
 }
 
 /* HEADER */
@@ -37,13 +40,13 @@ header {
 
 header h1 {
   margin: 0;
-  margin-bottom: 10px; /* Espaçamento abaixo do h1 */
+  margin-bottom: 10px;
   font-size: 70px;
 }
 
 header p {
   margin: 0;
-  margin-top: 10px; /* Espaçamento acima do p */
+  margin-top: 10px;
   font-weight: bold;
 }
 
@@ -70,16 +73,18 @@ header p {
 
 /* ÁREA PRINCIPAL */
 main {
-  flex: 1; /* Faz o conteúdo principal expandir para preencher o espaço restante */
+  flex-grow: 1; /* Faz o conteúdo principal expandir para preencher o espaço restante */
   padding: 20px;
-  display: flex; /* Alinha conteúdo interno */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .login-container {
   width: 100%;
   max-width: 400px;
+  margin: 0 auto;
 }
 
 .login-form {
@@ -88,12 +93,28 @@ main {
   gap: 15px;
 }
 
+/* Campo de entrada com ícones de imagem */
+.form-group {
+  position: relative;
+}
+
 .form-group input {
   width: 100%;
   padding: 20px;
+  padding-left: 50px;
   border: 1px solid #ccc;
   border-radius: 15px;
   font-size: 16px;
+
+}
+
+.form-group img {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
 }
 
 .login-button {
@@ -123,14 +144,14 @@ main {
   text-align: center;
 }
 
-
-
 /* RODAPÉ */
 footer {
   text-align: center;
   padding: 10px;
+  margin-bottom: 40px;
   background: transparent;
   color: white;
+  margin-top: auto;
 }
 
 footer p {
