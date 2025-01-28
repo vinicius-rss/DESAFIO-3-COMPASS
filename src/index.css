@@ -6,8 +6,10 @@
 }
 
 html, body {
-  height: 100%; /* Garante que o body cubra a altura da tela */
+  height: 100%;
+  width: 100%;  
   margin: 0;
+  overflow: hidden;  
 }
 
 /* ESTILOS GERAIS */
@@ -15,15 +17,14 @@ body {
   font-family: 'DM Sans', Arial, Helvetica, sans-serif;
   color: white;
   background: #242424;
-  overflow-x: hidden;
   background-image: url(/public/login-background.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column; /* Garante que o conteúdo do body seja empilhado verticalmente */
-  min-height: 100vh; /* Garante que o body cubra ao menos toda a altura da tela */
-  justify-content: flex-start; /* Alinha os itens no topo inicialmente */
+  flex-direction: column;  
+  min-height: 100vh;  
+  justify-content: flex-start; 
   align-items: center;
 }
 
@@ -34,8 +35,8 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 120px;
-  color: white;
+  padding-top: 50px;  
+  margin-bottom: 180px;  
 }
 
 header h1 {
@@ -73,17 +74,17 @@ header p {
 
 /* ÁREA PRINCIPAL */
 main {
-  flex-grow: 1; /* Faz o conteúdo principal expandir para preencher o espaço restante */
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   width: 100%;
+  padding: 20px;
 }
 
 .login-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -93,19 +94,24 @@ main {
   gap: 15px;
 }
 
-/* Campo de entrada com ícones de imagem */
+ 
 .form-group {
   position: relative;
+  margin-bottom: 20px;
+  margin-right: -25px;
+  margin-left: -25px;
 }
 
 .form-group input {
-  width: 100%;
+  width: 105%;  
+  max-width: 500px;  
   padding: 20px;
   padding-left: 50px;
+  padding-right: 80px;  
   border: 1px solid #ccc;
   border-radius: 15px;
   font-size: 16px;
-
+  margin: 0 auto;  
 }
 
 .form-group img {
@@ -118,14 +124,20 @@ main {
 }
 
 .login-button {
+  width: 120%; 
+  max-width: 500px;  
   padding: 20px;
   background-color: #0ACF83;
   color: white;
   border: none;
   border-radius: 15px;
   cursor: pointer;
+  margin: 0 auto;  
+  margin-right: -25px;
+  margin-left: -25px;
 }
 
+ 
 .login-button:hover {
   background-color: #555;
 }
@@ -133,14 +145,16 @@ main {
 .forgot-password {
   font-size: 15px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
+
 .forgot-password:hover {
- text-decoration: underline;
+  text-decoration: underline;
 }
 
 .google-sign-in {
   margin-top: 15px;
+  margin-bottom: 75px;
   text-align: center;
 }
 
@@ -148,10 +162,10 @@ main {
 footer {
   text-align: center;
   padding: 10px;
-  margin-bottom: 40px;
   background: transparent;
   color: white;
   margin-top: auto;
+  width: 100%;
 }
 
 footer p {
@@ -169,3 +183,8 @@ footer p {
   color: rgb(0, 104, 2);
   text-decoration: none;
 }
+
+.signup-button {
+  margin-top: 69px;  
+}
+

@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import TimeDisplay from './components/TimeDisplay';
 import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
+  useEffect(() => {
+    document.title = "Sign In";  
+  }, []); 
   return (
     <div className="login-container">
       <header>
         <div className="status-bar">
-          <span className="time">9:41</span>
+        <TimeDisplay />
           <div className="icons">
             <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
               <image href="/public/header-signal.svg" />
