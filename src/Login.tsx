@@ -1,16 +1,30 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import TimeDisplay from './components/TimeDisplay';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
   useEffect(() => {
-    document.title = "Sign In";  
-  }, []); 
+    document.title = "Sign In";
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (email && password) {
+       
+      navigate('/home');
+    }
+  };
+
   return (
     <div className="login-container">
       <header>
         <div className="status-bar">
-        <TimeDisplay />
+          <TimeDisplay />
           <div className="icons">
             <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
               <image href="/public/header-signal.svg" />
@@ -29,14 +43,30 @@ const Login: React.FC = () => {
 
       <main>
         <section className="login-form">
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
               <img src="/public/icon-email.svg" alt="Email Icon" />
-              <input type="email" id="email" name="email" placeholder="Email" required />
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Email" 
+                required 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+              />
             </div>
             <div className="form-group">
               <img src="/public/icon-password.svg" alt="Password Icon" />
-              <input type="password" id="password" name="password" placeholder="Password" required />
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Password" 
+                required 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+              />
             </div>
             <p className="forgot-password">Forgot password</p>
             <button type="submit" className="login-button">Sign In</button>

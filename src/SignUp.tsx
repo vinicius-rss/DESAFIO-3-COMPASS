@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp: React.FC = () => {
   useEffect(() => {
+
     document.title = "Sign Up";  
   }, []);  
 
