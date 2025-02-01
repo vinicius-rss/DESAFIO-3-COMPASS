@@ -4,13 +4,58 @@
   background-color: #fff !important;  
 }
 
-/*   Container Principal   */
-.home-container {
+/*   HEADER   */
+.home-search-container {
+  width: 110%;
+  max-width: 600px;
+  margin: 0 auto;
   border: 1px solid red;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;  
+  width: 130%;
+  padding: 10px;
+  margin-top: 12px;
+  margin-left: -41px;
+  gap: 25px;
+}
+
+.home-header-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-header-icon:nth-child(2){
+  margin-left: -40px;
+  
+}
+.home-header-icon:nth-child(3){
+   margin-left: 65px;
+ margin-top: 10px;
+}
+.home-header-icon:nth-child(5){
+   margin-left: 40px;
+}
+
+.logo-text {
+  font-size: 18px;
+  margin-left: -35px;
+  color: black;
+}
+
+.home-title {
+  color: black;
 }
 
 /*   Relógio   */
 .home-time {
+  font-size: 15px;
+  font-weight: bold;
   margin-left: 30px;
   margin-top: 15px;
   color: black;
@@ -21,11 +66,6 @@
   font-size: 2rem;
 }
 
-/*   Rodapé   */
-.home-footer {
-  
-}
-
 /*   Barra de Status (Ícones do Dispositivo)   */
 .home-status-bar {
   display: flex;
@@ -34,12 +74,30 @@
   padding: 5px;
   position: absolute;
   top: 0;
+  right: 0;
+  border: 1px solid green;
 }
 
 /*   Ícones do Dispositivo   */
 .home-icon {
-  margin-top: 15px;
-  margin-right: 10px;
+  margin-top: 5px;
+  margin-right: 0px;
   display: flex;
-  border: 1px solid red;
+}
+
+/* MAIN */
+
+.home-main {
+  max-width: 600px;
+  width: 320px;
+  border: 1px solid black;
+}
+
+.home-search-section  p, h1 {
+  color: black;
+}
+
+/*   Rodapé   */
+.home-footer {
+  
 }
