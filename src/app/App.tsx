@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Login from '../Login'; // Página de login
-import SignUp from '../SignUp'; // Página de signup
-import Home from '../pages/home/home.tsx'; // Página Home
+import Login from '../Login'; 
+import SignUp from '../SignUp'; 
+import Home from '../pages/home/Home.tsx'; 
 
 const App: React.FC = () => {
   useEffect(() => {
     const currentPath = window.location.pathname;
     if (currentPath === "/signup") {
-      document.title = "Sign Up"; // Quando a página for de signup
+      document.title = "Sign Up"; // para quando a página for de signup
+    } else if (currentPath === "/home") {
+      document.title = "Home"; // para quando for a página Home
     } else {
-      document.title = "Login"; // Quando for a página de login
+      document.title = "Login"; // para quando for a página de login
     }
-  }, []);  
+  }, []);
+  
 
   return (
     <Router>

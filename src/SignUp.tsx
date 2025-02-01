@@ -1,12 +1,22 @@
 import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import TimeDisplay from './components/TimeDisplay';
-import { Link } from 'react-router-dom';
 
 const SignUp: React.FC = () => {
-  useEffect(() => {
+  const navigate = useNavigate(); // Hook para navegação
 
+  useEffect(() => {
     document.title = "Sign Up";  
   }, []);  
+
+  
+  const handleSignUp = (event: React.FormEvent) => {
+    event.preventDefault(); // Evita recarregar a página
+
+     
+
+    navigate('/home'); // Redireciona para Home
+  };
 
   return (
     <div className="login-container">
@@ -25,13 +35,13 @@ const SignUp: React.FC = () => {
             </svg>
           </div>
         </div>
-        <h1>Audio</h1> {}
+        <h1>Audio</h1>
         <p>It’s modular and designed to last</p>
       </header>
 
       <main>
         <section className="login-form">
-          <form className="form">
+          <form className="form" onSubmit={handleSignUp}>
             <div className="form-group">
               <img src="/public/icon-email.svg" alt="Email Icon" />
               <input type="email" id="email" name="email" placeholder="Email" required />
