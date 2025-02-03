@@ -1,20 +1,20 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
+ 
 const firebaseConfig = {
-  apiKey:"AIzaSyDyDkmh3BF0nK7nMszJN4BvkqNiUPHisTg",
+  apiKey: "AIzaSyDyDkmh3BF0nK7nMszJN4BvkqNiUPHisTg",
   authDomain: "desafio-3---compass-uol.firebaseapp.com",
   projectId: "desafio-3---compass-uol",
-  storageBucket: "desafio-3---compass-uol.appspot.com",
-  messagingSenderId: "116583203377693694465",
-  appId: "ed458a3e308ef32005d5159b2b4e41a69ba3947a",
+  storageBucket: "desafio-3---compass-uol.firebasestorage.app",
+  messagingSenderId: "530849331446",
+  appId: "1:530849331446:web:6c8469ea5468ab11c514d7",
+  measurementId: "G-X9RPZT82WX"
 };
 
- 
- 
+// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
- 
-export const auth = getAuth(app);
- 
-export const googleProvider = new GoogleAuthProvider();
+export { auth, provider, signInWithPopup };

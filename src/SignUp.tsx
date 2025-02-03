@@ -1,21 +1,41 @@
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import TimeDisplay from './components/TimeDisplay';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, provider, signInWithPopup } from "./firebase-config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import TimeDisplay from "./components/TimeDisplay";
 
 const SignUp: React.FC = () => {
-  const navigate = useNavigate(); // Hook para navegação
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    document.title = "Sign Up";  
-  }, []);  
+    document.title = "Sign Up";
+  }, []);
 
-  
-  const handleSignUp = (event: React.FormEvent) => {
-    event.preventDefault(); // Evita recarregar a página
+  // Cadastro com Email e Senha
+  const handleSignUp = async (event: React.FormEvent) => {
+    event.preventDefault();
 
-     
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/home");  
+    } catch (error: any) {
+      setError(error.message);
+    }
+  };
 
-    navigate('/home'); // Redireciona para Home
+  // Cadastro/Login com Google
+  const handleGoogleSignUp = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log("Usuário cadastrado/logado com Google:", result.user);
+      navigate("/home");
+    } catch (error) {
+      console.error("Erro ao fazer login com o Google:", error);
+      setError("Failed to sign up with Google.");
+    }
   };
 
   return (
@@ -44,16 +64,34 @@ const SignUp: React.FC = () => {
           <form className="form" onSubmit={handleSignUp}>
             <div className="form-group">
               <img src="/public/icon-email.svg" alt="Email Icon" />
-              <input type="email" id="email" name="email" placeholder="Email" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="form-group">
               <img src="/public/icon-password.svg" alt="Password Icon" />
-              <input type="password" id="password" name="password" placeholder="Password" required />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
+
+            {error && <p className="error-message">{error}</p>}
 
             <button type="submit" className="login-button signup-button">Sign Up</button>
 
-            <p className="google-sign-in">
+            <p className="google-sign-in" onClick={handleGoogleSignUp} style={{ cursor: "pointer" }}>
               <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 24 24">
                 <image href="/public/icon-google.svg" />
               </svg>

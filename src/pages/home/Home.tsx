@@ -48,16 +48,29 @@ const Home: React.FC = () => {
         </svg>
         <p className='logo-text'>Audio</p>
         <img src="/img/home-avatar.png" alt="your profile image" className='home-header-icon' />
+
       </header>
       <main className='home-main'>
         <section className='home-search-section'>
           <div className='home-search-container'>
-            <div>
+            <div className='search-text'>
               <p>Hi, Andrea</p>
-              <h1>What are you loo</h1>
+              <h1>What are you looking for <span className="break-word">today?</span></h1>
+              <div className='search-container'>
+                <input type="text" placeholder="Search headphone" className="search-input" />
+              </div>
             </div>
           </div>
         </section>
+        <section className='home-products-section'>
+          <div className='home-products-container'>
+            <div>
+              
+              <p>olá</p>
+            </div>
+          </div>
+        </section>
+
       </main>
       <footer className='home-footer'>
 
